@@ -12,7 +12,7 @@ function setup() {
   paddle = {
     x: 50,
     y: 350,
-    w: 2500,
+    w: 275,
     h: 30,
     
     show: function() {
@@ -56,7 +56,8 @@ function createBall() {
     },
     
     update: function() {
-      
+      this.speedX *= 1.001
+      this.speedy *= 1.001
 
       this.x += this.speedX;
       this.y += this.speedY;
@@ -81,12 +82,12 @@ function createBall() {
 
 function keyPressed() {
   if (keyCode === ENTER) {
+    balls = []; 
     
-   balls = []; 
     for (let i = 0; i < 10; i++) {
       balls.push(createBall()); 
     }
 
-    loop();
+    loop(); 
   }
 }
